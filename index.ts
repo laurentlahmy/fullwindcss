@@ -116,20 +116,52 @@ type formats =
   | "cssoklab"
   | "cssoklch";
 
-export const c = (
-  color: colors = "gray",
+export let c = (
+  color: colors | string = "gray",
   number: number = 500,
   format: formats = "hex"
 ) => {
   const chroma_color = chroma_scales[color].scale(number);
   if (format.startsWith("css")) {
-    return chroma_color.css();
+    return chroma_color.css(format.slice(3));
   }
   if (!format.startsWith("css")) {
     return chroma_color[format]();
   }
   return;
 };
+
+//@ts-ignore
+export const colors_array_of_names: string[] =
+  tailwind_select_colors_with_color_array.reduce(
+    (
+      previousValue,
+      [
+        color_name_as_string,
+        current_color_colors_array,
+        current_color_values_array,
+      ]
+    ) => {
+      return [...previousValue, color_name_as_string];
+    },
+    []
+  );
+
+colors_array_of_names.forEach((element) => {
+  //@ts-ignore
+  console.log("-> ", { element }, "");
+  //@ts-ignore
+  c[element] = element;
+  //@ts-ignore
+  // console.log("-> ", celement, "");
+});
+console.log("-> ", c.fuchsia, "");
+// console.log("-> ", { c }, "");
+
+// @ts-ignore
+// c.a = "a";
+
+// export let c
 
 // console.log("-> ", { chroma_scales }, "");
 // console.log("-> ", chroma_scales.blue.scale(500).hex(), "");
@@ -145,14 +177,14 @@ export const c = (
 // console.log("-> ", chroma_scales.gray.scale(555).hex(), "");
 
 // console.log("-> ", { colors }, "");
-console.log("-> ", c("blue", 0));
-console.log("-> ", c("blue", 50));
-console.log("-> ", c("blue", 500));
-console.log("-> ", c("blue", 900));
-console.log("-> ", c("green", 200));
-console.log("-> ", c("blue", 500, "csshsl"));
-console.log("-> ", c("blue", 900, "csshsl"));
-console.log("-> ", c("blue", 200, "csshsl"));
-console.log("-> ", c("blue", 500, "rgba"));
-console.log("-> ", c("blue", 900, "rgba"));
-console.log("-> ", c("blue", 200, "rgba"));
+// console.log("-> ", c("blue", 0));
+// console.log("-> ", c("blue", 50));
+// console.log("-> ", c("blue", 500));
+// console.log("-> ", c("blue", 900));
+// console.log("-> ", c("green", 200));
+// console.log("-> ", c("blue", 500, "csshsl"));
+// console.log("-> ", c("blue", 900, "csshsl"));
+// console.log("-> ", c("blue", 200, "csshsl"));
+// console.log("-> ", c("blue", 500, "rgba"));
+// console.log("-> ", c("blue", 900, "rgba"));
+// console.log("-> ", c("blue", 200, "rgba"));
