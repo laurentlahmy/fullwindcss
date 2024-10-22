@@ -1,4 +1,4 @@
-import { c, blue, indigo } from "./index";
+import { c, blue, indigo, trueGray } from "./index";
 // import { c } from "./dist/index.mjs";
 
 // console.log("-> ", c("blue", 0));
@@ -39,4 +39,5 @@ import { c, blue, indigo } from "./index";
 console.log(c.blue(550));
 console.log(c.trueGray(625));
 console.log(c.trueGray(625, "oklab"));
+console.log(trueGray(625, "oklab"));
 // c.blue(500);

@@ -4,7 +4,7 @@
 
 Ever wished there was a tailwind class between `gray-800` and `gray-900`?
 How the freedom to use every color value such as `blue-699` and `indigo-225`?
-With fullwindcss you can.
+With fullwindcss you can access `c.indigo(350)`.
 
 ### in tailwindcss classes:
 
@@ -20,16 +20,7 @@ import { c } from "fullwindcss";
 <div className={`bg-[${c.slate(250)}]`}>with tailwind</div>;
 ```
 
-<!-- ### import color by color:
-
-```ts
-import { blue, indigo } from "fullwindcss";
-
-blue(550); // "#3272f1"
-indigo(625); // "#4c42de"
-``` -->
-
-### single function:
+### import single function:
 
 ```ts
 import { c } from "fullwindcss";
@@ -37,6 +28,15 @@ import { c } from "fullwindcss";
 // c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
 // c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
 c.blue(778); // you can access the color names on the c object, can be more convenient than typing strings
+```
+
+### import color by color:
+
+```ts
+import { blue, indigo } from "fullwindcss";
+
+blue(550); // "#3272f1"
+indigo(625); // "#4c42de"
 ```
 
 ### formats:
