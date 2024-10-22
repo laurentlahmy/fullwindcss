@@ -1,4 +1,4 @@
-# extend tailwindCSS colors
+# Fullwindcss: Extend TailwindCSS Colors
 
 ### installation
 

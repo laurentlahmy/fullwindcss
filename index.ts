@@ -149,42 +149,5 @@ export const colors_array_of_names: string[] =
 
 colors_array_of_names.forEach((element) => {
   //@ts-ignore
-  console.log("-> ", { element }, "");
-  //@ts-ignore
   c[element] = element;
-  //@ts-ignore
-  // console.log("-> ", celement, "");
 });
-console.log("-> ", c.fuchsia, "");
-// console.log("-> ", { c }, "");
-
-// @ts-ignore
-// c.a = "a";
-
-// export let c
-
-// console.log("-> ", { chroma_scales }, "");
-// console.log("-> ", chroma_scales.blue.scale(500).hex(), "");
-// console.log("-> ", chroma_scales.blue.scale(0).hex(), "");
-// console.log("-> ", chroma_scales.blue.scale(10).hex(), "");
-// console.log("-> ", chroma_scales.blue.scale(997).hex(), "");
-// console.log("-> ", chroma_scales.blue.scale(1000).hex(), "");
-// console.log("-> ", chroma_scales.blue.scale(555).hex(), "");
-// console.log("-> ", chroma_scales.gray.scale(500).hex(), "");
-// console.log("-> ", chroma_scales.gray.scale(0).hex(), "");
-// console.log("-> ", chroma_scales.gray.scale(10).hex(), "");
-// console.log("-> ", chroma_scales.gray.scale(1000).hex(), "");
-// console.log("-> ", chroma_scales.gray.scale(555).hex(), "");
-
-// console.log("-> ", { colors }, "");
-// console.log("-> ", c("blue", 0));
-// console.log("-> ", c("blue", 50));
-// console.log("-> ", c("blue", 500));
-// console.log("-> ", c("blue", 900));
-// console.log("-> ", c("green", 200));
-// console.log("-> ", c("blue", 500, "csshsl"));
-// console.log("-> ", c("blue", 900, "csshsl"));
-// console.log("-> ", c("blue", 200, "csshsl"));
-// console.log("-> ", c("blue", 500, "rgba"));
-// console.log("-> ", c("blue", 900, "rgba"));
-// console.log("-> ", c("blue", 200, "rgba"));
