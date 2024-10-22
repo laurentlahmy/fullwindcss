@@ -1,0 +1,26 @@
+{
+  "name": "fullwindcss",
+  "version": "1.0.0",
+  "description": "fullwindcss",
+  "main": "dist/index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup ./index.ts",
+    "deploy": "npm publish",
+    "dev": "bun run build && bun run dist/index.mjs"
+  },
+  "keywords": [
+    "fullwindcss tailwindcss"
+  ],
+  "dependencies": {
+    "chroma-js": "^3.1.2",
+    "react": "^18.3.1",
+    "tailwindcss": "^3.4.14"
+  },
+  "author": "Laurent Lahmy",
+  "license": "ISC",
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  }
+}
