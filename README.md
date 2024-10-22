@@ -36,7 +36,16 @@ bun
 bun add fullwindcss
 ```
 
-### basic usage:
+### import color by color:
+
+```ts
+import { blue, indigo } from "fullwindcss";
+
+blue(550); // "#3272f1"
+indigo(625); // "#4c42de"
+```
+
+### single function:
 
 ```ts
 import { c } from "fullwindcss";
@@ -51,16 +60,7 @@ c(c.blue, 778); // you can access the color names on the c object, can be more c
 ```ts
 import { c } from "fullwindcss";
 
-<div className={`bg-[${c(blue, 250)}]`}>with tailwind</div>;
-```
-
-### import color:
-
-```ts
-import { blue, indigo } from "fullwindcss";
-
-blue(550); // "#3272f1"
-indigo(625); // "#4c42de"
+<div className={`bg-[${blue(250)}]`}>with tailwind</div>;
 ```
 
 ### formats:
