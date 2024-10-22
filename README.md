@@ -46,6 +46,14 @@ c("blue", 777); // you can use any value from 0 to 1000, the colors are interpol
 c(c.blue, 778); // you can access the color names on the c object, can be more convenient than typing strings
 ```
 
+### in tailwindcss classes:
+
+```ts
+import { c } from "fullwindcss";
+
+<div className={`bg-${c(blue, 250)}`}>with tailwind</div>;
+```
+
 ### formats:
 
 you can generate outputs in various formats
