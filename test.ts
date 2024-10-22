@@ -1,4 +1,4 @@
-import { c, colors_array_of_names, blue, indigo } from "./index";
+import { c, blue, indigo } from "./index";
 // import { c } from "./dist/index.mjs";
 
 // console.log("-> ", c("blue", 0));
