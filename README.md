@@ -3,8 +3,8 @@
 ### tl;dr
 
 Ever wished there was a tailwind class between `gray-800` and `gray-900`?
-How the freedom to use every color value such as `blue-699` and `indigo-225`?
-With fullwindcss you can access `c.indigo(350)`.
+How about the freedom to use any color shade number between `0` and `1000`, such as `blue-699` and `indigo-225`?
+With fullwindcss you can access `c.indigo(350)` or `slate(222)`.
 
 ### in tailwindcss classes:
 
