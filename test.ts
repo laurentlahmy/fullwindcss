@@ -1,4 +1,4 @@
-import { c, colors_array_of_names } from "./index";
+import { c, colors_array_of_names, blue, indigo } from "./index";
 // import { c } from "./dist/index.mjs";
 
 // console.log("-> ", c("blue", 0));
@@ -17,7 +17,7 @@ import { c, colors_array_of_names } from "./index";
 
 // console.log("-> ", { colors_array_of_names }, "");
 
-console.log(c("gray", 650));
+// console.log(c("gray", 650));
 // console.log(c("blue", 777));
 // console.log(c("blue", 777, "hex"));
 // console.log(c("blue", 777, "rgb"));
@@ -36,3 +36,5 @@ console.log(c("gray", 650));
 // console.log(c("blue", 777, "csslch"));
 // console.log(c("blue", 777, "cssoklab"));
 // console.log(c("blue", 777, "cssoklch"));
+console.log(blue(550));
+console.log(indigo(625));

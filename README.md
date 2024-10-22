@@ -54,6 +54,15 @@ import { c } from "fullwindcss";
 <div className={`bg-[${c(blue, 250)}]`}>with tailwind</div>;
 ```
 
+### import color:
+
+```ts
+import { blue, indigo } from "fullwindcss";
+
+blue(550); // "#3272f1"
+indigo(625); // "#4c42de"
+```
+
 ### formats:
 
 you can generate outputs in various formats
