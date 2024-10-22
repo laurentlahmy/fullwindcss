@@ -1,14 +1,68 @@
 # Fullwindcss: Extend TailwindCSS Colors
 
-Unlock 1001 shades for every 27 tailwind color, instead of being limited to the default 11 shades.
+### tl;dr
 
-The fullwind colors are a careful step by step interpolation of the origital tailwind colors.
+Ever wished there was a tailwind class between `gray-800` and `gray-900`?
+How the freedom to use every color value such as `blue-699` and `indigo-225`?
+With fullwindcss you can.
 
-There are many ways to interpolate colors. The straighforward approach of color interpolation yields bad, grayish / brownish colors in the middle of the generated gradient of colors.
+### in tailwindcss classes:
 
-fullwindcss uses CIELAB, the “perceptually uniform space”, designed to mimic the human perception of color and be the most accurate color system available to humans.
+```ts
+import { slate } from "fullwindcss";
 
-In addition, fullwind's interpolated colors perfectly fit tailwind's color scale: fullwind's pink-500 is the exact same color as tailwind's pink-500, thus preserving full compatilibity.
+<div className={`bg-[${slate(250)}]`}>with tailwind</div>;
+```
+
+```ts
+import { c } from "fullwindcss";
+
+<div className={`bg-[${c("slate", 250)}]`}>with tailwind</div>;
+```
+
+### import color by color:
+
+```ts
+import { blue, indigo } from "fullwindcss";
+
+blue(550); // "#3272f1"
+indigo(625); // "#4c42de"
+```
+
+### single function:
+
+```ts
+import { c } from "fullwindcss";
+
+c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
+c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
+c(c.blue, 778); // you can access the color names on the c object, can be more convenient than typing strings
+```
+
+### formats:
+
+you can generate outputs in various formats
+
+| format       | code                         | code (color import)     | return value                                                           |
+| ------------ | ---------------------------- | ----------------------- | ---------------------------------------------------------------------- |
+| default: hex | `c("blue", 777)`             | `blue(777)`             | `"#1e43b8"`                                                            |
+| hex          | `c("blue", 777, "hex")`      | `blue(777, "hex")`      | `"#1e43b8"`                                                            |
+| rgb          | `c("blue", 777, "rgb")`      | `blue(777, "rgb")`      | `"[ 30, 67, 184 ]"`                                                    |
+| rgba         | `c("blue", 777, "rgba")`     | `blue(777, "rgba")`     | `"[ 30, 67, 184, 1 ]"`                                                 |
+| hsl          | `c("blue", 777, "hsl")`      | `blue(777, "hsl")`      | `"[ 225.55575934468578, 0.7196149254018972, 0.4202639994500806, 1 ]"`  |
+| hsv          | `c("blue", 777, "hsv")`      | `blue(777, "hsv")`      | `"[ 225.55575934468578, 0.8369489177743832, 0.7226922460634533 ]"`     |
+| hsi          | `c("blue", 777, "hsi")`      | `blue(777, "hsi")`      | `"[ 226.6661608747827, 0.6797869850098448, 0.3679917658572705 ]"`      |
+| lab          | `c("blue", 777, "lab")`      | `blue(777, "lab")`      | `"[ 33.52833716034179, 31.889097429039282, -65.1172971364519 ]"`       |
+| lch          | `c("blue", 777, "lch")`      | `blue(777, "lch")`      | `"[ 33.52833716034179, 72.506392278169, 296.0918127297107 ]"`          |
+| hcl          | `c("blue", 777, "hcl")`      | `blue(777, "hcl")`      | `"[ 296.0918127297107, 72.506392278169, 33.52833716034179 ]"`          |
+| oklab        | `c("blue", 777, "oklab")`    | `blue(777, "oklab")`    | `"[ 0.4390910082965143, -0.015429164048355926, -0.1885483069121165 ]"` |
+| oklch        | `c("blue", 777, "oklch")`    | `blue(777, "oklch")`    | `"[ 0.4390910082965143, 0.1891785483152272, 265.3218322088104 ]"`      |
+| cssrgb       | `c("blue", 777, "cssrgb")`   | `blue(777, "cssrgb")`   | `"rgb(30 67 184)"`                                                     |
+| csshsl       | `c("blue", 777, "csshsl")`   | `blue(777, "csshsl")`   | `"hsl(225.56deg 71.96% 42.03%)"`                                       |
+| csslab       | `c("blue", 777, "csslab")`   | `blue(777, "csslab")`   | `"lab(32.37% 23.43 -66.75)"`                                           |
+| csslch       | `c("blue", 777, "csslch")`   | `blue(777, "csslch")`   | `"lch(32.37% 70.74 289.34deg)"`                                        |
+| cssoklab     | `c("blue", 777, "cssoklab")` | `blue(777, "cssoklab")` | `"oklab(43.91% -0.02 -0.19)"`                                          |
+| cssoklch     | `c("blue", 777, "cssoklch")` | `blue(777, "cssoklch")` | `"oklch(43.91% 0.19 265.32deg)"`                                       |
 
 ### installation
 
@@ -36,54 +90,14 @@ bun
 bun add fullwindcss
 ```
 
-### import color by color:
+### more context
 
-```ts
-import { blue, indigo } from "fullwindcss";
+Unlock 1001 shades for every 27 tailwind color, instead of being limited to the default 11 shades.
 
-blue(550); // "#3272f1"
-indigo(625); // "#4c42de"
-```
+The fullwind colors are a careful step by step interpolation of the origital tailwind colors.
 
-### single function:
+There are many ways to interpolate colors. The straighforward approach of color interpolation yields bad, grayish / brownish colors in the middle of the generated gradient of colors.
 
-```ts
-import { c } from "fullwindcss";
+fullwindcss uses CIELAB, the “perceptually uniform space”, designed to mimic the human perception of color and be the most accurate color system available to humans.
 
-c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
-c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
-c(c.blue, 778); // you can access the color names on the c object, can be more convenient than typing strings
-```
-
-### in tailwindcss classes:
-
-```ts
-import { c } from "fullwindcss";
-
-<div className={`bg-[${blue(250)}]`}>with tailwind</div>;
-```
-
-### formats:
-
-you can generate outputs in various formats
-
-| format       | code                         | code (color import)     | return value                                                           |
-| ------------ | ---------------------------- | ----------------------- | ---------------------------------------------------------------------- |
-| default: hex | `c("blue", 777)`             | `blue(777)`             | `"#1e43b8"`                                                            |
-| hex          | `c("blue", 777, "hex")`      | `blue(777, "hex")`      | `"#1e43b8"`                                                            |
-| rgb          | `c("blue", 777, "rgb")`      | `blue(777, "rgb")`      | `"[ 30, 67, 184 ]"`                                                    |
-| rgba         | `c("blue", 777, "rgba")`     | `blue(777, "rgba")`     | `"[ 30, 67, 184, 1 ]"`                                                 |
-| hsl          | `c("blue", 777, "hsl")`      | `blue(777, "hsl")`      | `"[ 225.55575934468578, 0.7196149254018972, 0.4202639994500806, 1 ]"`  |
-| hsv          | `c("blue", 777, "hsv")`      | `blue(777, "hsv")`      | `"[ 225.55575934468578, 0.8369489177743832, 0.7226922460634533 ]"`     |
-| hsi          | `c("blue", 777, "hsi")`      | `blue(777, "hsi")`      | `"[ 226.6661608747827, 0.6797869850098448, 0.3679917658572705 ]"`      |
-| lab          | `c("blue", 777, "lab")`      | `blue(777, "lab")`      | `"[ 33.52833716034179, 31.889097429039282, -65.1172971364519 ]"`       |
-| lch          | `c("blue", 777, "lch")`      | `blue(777, "lch")`      | `"[ 33.52833716034179, 72.506392278169, 296.0918127297107 ]"`          |
-| hcl          | `c("blue", 777, "hcl")`      | `blue(777, "hcl")`      | `"[ 296.0918127297107, 72.506392278169, 33.52833716034179 ]"`          |
-| oklab        | `c("blue", 777, "oklab")`    | `blue(777, "oklab")`    | `"[ 0.4390910082965143, -0.015429164048355926, -0.1885483069121165 ]"` |
-| oklch        | `c("blue", 777, "oklch")`    | `blue(777, "oklch")`    | `"[ 0.4390910082965143, 0.1891785483152272, 265.3218322088104 ]"`      |
-| cssrgb       | `c("blue", 777, "cssrgb")`   | `blue(777, "cssrgb")`   | `"rgb(30 67 184)"`                                                     |
-| csshsl       | `c("blue", 777, "csshsl")`   | `blue(777, "csshsl")`   | `"hsl(225.56deg 71.96% 42.03%)"`                                       |
-| csslab       | `c("blue", 777, "csslab")`   | `blue(777, "csslab")`   | `"lab(32.37% 23.43 -66.75)"`                                           |
-| csslch       | `c("blue", 777, "csslch")`   | `blue(777, "csslch")`   | `"lch(32.37% 70.74 289.34deg)"`                                        |
-| cssoklab     | `c("blue", 777, "cssoklab")` | `blue(777, "cssoklab")` | `"oklab(43.91% -0.02 -0.19)"`                                          |
-| cssoklch     | `c("blue", 777, "cssoklch")` | `blue(777, "cssoklch")` | `"oklch(43.91% 0.19 265.32deg)"`                                       |
+In addition, fullwind's interpolated colors perfectly fit tailwind's color scale: fullwind's pink-500 is the exact same color as tailwind's pink-500, thus preserving full compatilibity.
