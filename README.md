@@ -8,35 +8,35 @@ With fullwindcss you can.
 
 ### in tailwindcss classes:
 
-```ts
+<!-- ```ts
 import { slate } from "fullwindcss";
 
 <div className={`bg-[${slate(250)}]`}>with tailwind</div>;
-```
+``` -->
 
 ```ts
 import { c } from "fullwindcss";
 
-<div className={`bg-[${c("slate", 250)}]`}>with tailwind</div>;
+<div className={`bg-[${c.slate(250)}]`}>with tailwind</div>;
 ```
 
-### import color by color:
+<!-- ### import color by color:
 
 ```ts
 import { blue, indigo } from "fullwindcss";
 
 blue(550); // "#3272f1"
 indigo(625); // "#4c42de"
-```
+``` -->
 
 ### single function:
 
 ```ts
 import { c } from "fullwindcss";
 
-c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
-c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
-c(c.blue, 778); // you can access the color names on the c object, can be more convenient than typing strings
+// c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
+// c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
+c.blue(778); // you can access the color names on the c object, can be more convenient than typing strings
 ```
 
 ### formats:

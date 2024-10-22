@@ -36,5 +36,6 @@ import { c, blue, indigo } from "./index";
 // console.log(c("blue", 777, "csslch"));
 // console.log(c("blue", 777, "cssoklab"));
 // console.log(c("blue", 777, "cssoklch"));
-console.log(blue(550));
-console.log(indigo(625));
+console.log(c.blue(550));
+console.log(c.trueGray(625));
+// c.blue(500);
