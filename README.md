@@ -51,7 +51,7 @@ c(c.blue, 778); // you can access the color names on the c object, can be more c
 ```ts
 import { c } from "fullwindcss";
 
-<div className={`bg-${c(blue, 250)}`}>with tailwind</div>;
+<div className={`bg-[${c(blue, 250)}]`}>with tailwind</div>;
 ```
 
 ### formats:
