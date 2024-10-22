@@ -19,7 +19,6 @@
   "author": "Laurent Lahmy",
   "license": "ISC",
   "devDependencies": {
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.3"
+    "tsup": "^8.3.0"
   }
 }
