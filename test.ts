@@ -38,4 +38,5 @@ import { c, blue, indigo } from "./index";
 // console.log(c("blue", 777, "cssoklch"));
 console.log(c.blue(550));
 console.log(c.trueGray(625));
+console.log(c.trueGray(625, "oklab"));
 // c.blue(500);
