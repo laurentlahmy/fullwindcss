@@ -1,18 +1,15 @@
-# Fullwindcss: Extend TailwindCSS Colors
+# fullwindcss: the extended TailwindCSS Color palette in a single function
+
+- Access tailwindcss colors with a function call: `c.gray(500)` returns the hex value of gray-500
+- Access tailwindcss color shades that are not the default 50, 100, 200, ...,900, 950: `c.indigo(685)`
 
 ### tl;dr
 
 Ever wished there was a tailwind class between `gray-800` and `gray-900`?
 How about the freedom to use any color shade number between `0` and `1000`, such as `blue-699` and `indigo-225`?
-With fullwindcss you can access `c.indigo(350)` or `slate(222)`.
+With fullwindcss you can access `c.indigo(350)` or `slate(222)`, giving you access to over 27,000 colors!
 
 ### in tailwindcss classes:
-
-<!-- ```ts
-import { slate } from "fullwindcss";
-
-<div className={`bg-[${slate(250)}]`}>with tailwind</div>;
-``` -->
 
 ```ts
 import { c } from "fullwindcss";
