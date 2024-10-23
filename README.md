@@ -25,9 +25,7 @@ import { c } from "fullwindcss";
 ```ts
 import { c } from "fullwindcss";
 
-// c("blue", 500); // the first param is the tailwind color string, the second is the tailwind color value
-// c("blue", 777); // you can use any value from 0 to 1000, the colors are interpolated using the lab method
-c.blue(778); // you can access the color names on the c object, can be more convenient than typing strings
+c.blue(778);
 ```
 
 ### import color by color:
@@ -91,8 +89,6 @@ bun add fullwindcss
 ```
 
 ### more context
-
-Unlock 1001 shades for every 27 tailwind color, instead of being limited to the default 11 shades.
 
 The fullwind colors are a careful step by step interpolation of the origital tailwind colors.
 
