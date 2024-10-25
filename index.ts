@@ -53,20 +53,6 @@ const chroma_scales = tailwind_select_colors_with_color_array.reduce(
   {}
 );
 
-// const colors = tailwind_select_colors_with_color_array.reduce(
-//   (
-//     previousValue,
-//     [
-//       color_name_as_string,
-//       current_color_colors_array,
-//       current_color_values_array,
-//     ]
-//   ) => {
-//     return `${previousValue} | '${color_name_as_string}'`;
-//   },
-//   ``
-// );
-
 type colors =
   | "slate"
   | "gray"
@@ -131,86 +117,6 @@ export let get_color = (
   return;
 };
 
-// //@ts-ignore
-// export const colors_array_of_names: string[] =
-//   tailwind_select_colors_with_color_array.reduce(
-//     (
-//       previousValue,
-//       [
-//         color_name_as_string,
-//         current_color_colors_array,
-//         current_color_values_array,
-//       ]
-//     ) => {
-//       return [...previousValue, color_name_as_string];
-//     },
-//     []
-//   );
-
-// // export type c = {};
-// let c =
-
-// colors_array_of_names.forEach((element) => {
-//   //@ts-ignore
-//   c[element] = (value: number, format?: formats) =>
-//     get_color(element, value, format);
-// });
-
-// export const slate = (value: number, format?: formats) =>
-//   get_color("slate", value, format);
-// export const gray = (value: number, format?: formats) =>
-//   get_color("gray", value, format);
-// export const zinc = (value: number, format?: formats) =>
-//   get_color("zinc", value, format);
-// export const neutral = (value: number, format?: formats) =>
-//   get_color("neutral", value, format);
-// export const stone = (value: number, format?: formats) =>
-//   get_color("stone", value, format);
-// export const red = (value: number, format?: formats) =>
-//   get_color("red", value, format);
-// export const orange = (value: number, format?: formats) =>
-//   get_color("orange", value, format);
-// export const amber = (value: number, format?: formats) =>
-//   get_color("amber", value, format);
-// export const yellow = (value: number, format?: formats) =>
-//   get_color("yellow", value, format);
-// export const lime = (value: number, format?: formats) =>
-//   get_color("lime", value, format);
-// export const green = (value: number, format?: formats) =>
-//   get_color("green", value, format);
-// export const emerald = (value: number, format?: formats) =>
-//   get_color("emerald", value, format);
-// export const teal = (value: number, format?: formats) =>
-//   get_color("teal", value, format);
-// export const cyan = (value: number, format?: formats) =>
-//   get_color("cyan", value, format);
-// export const sky = (value: number, format?: formats) =>
-//   get_color("sky", value, format);
-// export const blue = (value: number, format?: formats) =>
-//   get_color("blue", value, format);
-// export const indigo = (value: number, format?: formats) =>
-//   get_color("indigo", value, format);
-// export const violet = (value: number, format?: formats) =>
-//   get_color("violet", value, format);
-// export const purple = (value: number, format?: formats) =>
-//   get_color("purple", value, format);
-// export const fuchsia = (value: number, format?: formats) =>
-//   get_color("fuchsia", value, format);
-// export const pink = (value: number, format?: formats) =>
-//   get_color("pink", value, format);
-// export const rose = (value: number, format?: formats) =>
-//   get_color("rose", value, format);
-// export const lightBlue = (value: number, format?: formats) =>
-//   get_color("lightBlue", value, format);
-// export const warmGray = (value: number, format?: formats) =>
-//   get_color("warmGray", value, format);
-// export const trueGray = (value: number, format?: formats) =>
-//   get_color("trueGray", value, format);
-// export const coolGray = (value: number, format?: formats) =>
-//   get_color("coolGray", value, format);
-// export const blueGray = (value: number, format?: formats) =>
-//   get_color("blueGray", value, format);
-
 // Define the color names as a type to ensure type safety
 type ColorName =
   | "slate"
@@ -240,9 +146,6 @@ type ColorName =
   | "trueGray"
   | "coolGray"
   | "blueGray";
-
-// Define the formats type if not already defined
-// type formats = string; // Replace with actual format type if different
 
 // Create a type for the color function
 type ColorFunction = (value: number, format?: formats) => string;
