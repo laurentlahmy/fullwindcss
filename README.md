@@ -9,14 +9,6 @@ Ever wished there was a tailwind class between `gray-800` and `gray-900`?
 How about the freedom to use any color shade number between `0` and `1000`, such as `blue-699` and `indigo-225`?
 With fullwindcss you can access `c.indigo(350)` or `slate(222)`, giving you access to over 27,000 colors!
 
-### in tailwindcss classes:
-
-```ts
-import { c } from "fullwindcss";
-
-<div className={`bg-[${c.slate(250)}]`}>with tailwind</div>;
-```
-
 ### import single function:
 
 ```ts
