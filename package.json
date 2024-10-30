@@ -1,6 +1,6 @@
 {
   "name": "fullwindcss",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "fullwindcss",
   "main": "dist/index.mjs",
   "scripts": {
