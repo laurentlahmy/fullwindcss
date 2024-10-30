@@ -41,16 +41,20 @@ const chroma_scales = tailwind_select_colors_with_color_array.reduce(
   ) => {
     return {
       ...previousValue,
-      [color_name_as_string as string]: {
+      [color_name_as_string as colors]: {
         scale: chroma
           // @ts-ignore
-          .scale(["#FFFFFF", ...current_color_colors_array, "#000000"])
-          .domain([0, ...current_color_values_array, 1000])
+          .scale([
+            "#FFFFFF",
+            ...(current_color_colors_array as string[]),
+            "#000000",
+          ])
+          .domain([0, ...(current_color_values_array as number[]), 1000])
           .mode("lab"),
       },
     };
   },
-  {}
+  {} as Record<colors, { scale: chroma.Scale }>
 );
 
 type colors =
@@ -103,22 +107,23 @@ type formats =
   | "cssoklch";
 
 export let get_color = (
-  color: colors | string = "gray",
+  color: colors = "gray",
   number: number = 500,
   format: formats = "hex"
-) => {
+): string => {
   const chroma_color = chroma_scales[color].scale(number);
   if (format.startsWith("css")) {
-    return chroma_color.css(format.slice(3));
+    return chroma_color.css(format.slice(3) as any);
   }
   if (!format.startsWith("css")) {
+    // @ts-ignore
     return chroma_color[format]();
   }
-  return;
+  return "";
 };
 
 // Define the color names as a type to ensure type safety
-type ColorName =
+export type ColorName =
   | "slate"
   | "gray"
   | "zinc"
