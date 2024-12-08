@@ -1,6 +1,6 @@
 {
   "name": "fullwindcss",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "fullwindcss",
   "main": "dist/index.mjs",
   "type": "module",
@@ -10,8 +10,8 @@
     "build_": "tsup ./index.ts",
     "buildscript": "tsup ./script.ts",
     "gen": "tsup ./gen.ts",
-    "deploy": "pnpm publish",
-    "publish": "pnpm publish"
+    "deploy_": "pnpm publish",
+    "publish_": "pnpm publish"
   },
   "keywords": [
     "fullwindcss tailwindcss"
