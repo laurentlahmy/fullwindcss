@@ -1,6 +1,6 @@
 {
   "name": "fullwindcss",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "fullwindcss",
   "main": "dist/index.mjs",
   "type": "module",
@@ -30,7 +30,7 @@
     "typescript": "^5.7.2"
   },
   "exports": {
-    ".": "./dist/index.tj",
+    ".": "./dist/index.js",
     "./script": "./dist/script.js"
   }
 }
