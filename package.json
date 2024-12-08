@@ -1,15 +1,17 @@
 {
   "name": "fullwindcss",
-  "version": "1.0.12",
+  "version": "1.0.16",
   "description": "fullwindcss",
   "main": "dist/index.mjs",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup ./index.ts",
+    "build": "tsup",
+    "build_": "tsup ./index.ts",
+    "buildscript": "tsup ./script.ts",
     "gen": "tsup ./gen.ts",
-    "deploy": "npm publish",
-    "dev": "bun run build && bun run dist/index.mjs"
+    "deploy": "pnpm publish",
+    "publish": "pnpm publish"
   },
   "keywords": [
     "fullwindcss tailwindcss"
@@ -24,6 +26,11 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.10.1",
-    "tsup": "^8.3.5"
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "exports": {
+    ".": "./dist/index.ts",
+    "./script": "./dist/script.ts"
   }
 }
