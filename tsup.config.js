@@ -6,6 +6,6 @@ export default defineConfig({
   clean: true,
   treeshake: true,
   format: ["esm"],
-  // external: ["react"],
   loader: { ".js": "jsx" },
+  dts: true,
 });
