@@ -1,11 +1,24 @@
 import chroma from "chroma-js";
-import baseColors from "tailwindcss/colors";
+import baseColors from "tailwindcss/colors.js";
 
-// // console.log("-> ", { baseColors }, "");
+
+delete baseColors.lightBlue
+delete baseColors.warmGray
+delete baseColors.trueGray
+delete baseColors.coolGray
+delete baseColors.blueGray
+
 
 const tailwind_select_colors = Object.entries(baseColors).filter(
   ([, value]) => value["50"]
-);
+)
+
+
+
+
+
+
+
 // console.log("-> ", { tailwind_select_colors }, "");
 const tailwind_select_colors_with_color_array = tailwind_select_colors.map(
   ([color_name_as_string, color_object]) => {

@@ -1,5 +1,5 @@
 // import { c, blue, indigo, trueGray } from "./index";
-import { c, blue, indigo, trueGray } from "./dist/index.mjs";
+import { c, blue, indigo, trueGray } from "./dist/index.js";
 
 // console.log("-> ", c("blue", 0));
 // console.log("-> ", c("blue", 50));

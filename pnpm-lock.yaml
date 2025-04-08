@@ -11,6 +11,9 @@ importers:
       '@types/chroma-js':
         specifier: ^2.4.4
         version: 2.4.4
+      '@types/tailwindcss':
+        specifier: ^3.1.0
+        version: 3.1.0
       chroma-js:
         specifier: ^3.1.2
         version: 3.1.2
@@ -322,6 +325,10 @@ packages:
 
   '@types/node@22.10.1':
     resolution: {integrity: sha512-qKgsUwfHZV2WCWLAnVP1JqnpE6Im6h3Y0+fYgMTasNQ7V++CBX5OT1as0g0f+OyubbFqhf6XVNIsmN4IIhEgGQ==}
+
+  '@types/tailwindcss@3.1.0':
+    resolution: {integrity: sha512-JxPzrm609hzvF4nmOI3StLjbBEP3WWQxDDJESqR1nh94h7gyyy3XSl0hn5RBMJ9mPudlLjtaXs5YEBtLw7CnPA==}
+    deprecated: This is a stub types definition. tailwindcss provides its own type definitions, so you do not need this installed.
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -1028,6 +1035,12 @@ snapshots:
   '@types/node@22.10.1':
     dependencies:
       undici-types: 6.20.0
+
+  '@types/tailwindcss@3.1.0':
+    dependencies:
+      tailwindcss: 3.4.16
+    transitivePeerDependencies:
+      - ts-node
 
   ansi-regex@5.0.1: {}
 

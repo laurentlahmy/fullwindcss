@@ -86,3 +86,7 @@ There are many ways to interpolate colors. The straighforward approach of color 
 fullwindcss uses CIELAB, the “perceptually uniform space”, designed to mimic the human perception of color and be the most accurate color system available to humans.
 
 In addition, fullwind's interpolated colors perfectly fit tailwind's color scale: fullwind's pink-500 is the exact same color as tailwind's pink-500, thus preserving full compatilibity.
+
+#### version 1.4 removes deprecated tailwind colors 
+
+Goodbye console warning!

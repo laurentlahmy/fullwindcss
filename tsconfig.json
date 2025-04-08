@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "bundler"
+  }
+}
