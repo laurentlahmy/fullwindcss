@@ -1,3 +1,5 @@
+-> you can also grab all the tailwindcss v4 css variables on https://fullwindcss.com/ (it's free)
+
 # fullwindcss: the extended TailwindCSS Color palette in a single function
 
 - Access tailwindcss colors with a function call: `c.gray(500)` returns the hex value of gray-500
